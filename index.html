@@ -218,12 +218,12 @@
 
           def draw(self):
               pyxel.cls(0)
-
               camera_x = self.player.x - (pyxel.width // 2) + (self.player.width // 2)
               camera_y = self.player.y - (pyxel.height // 2) + (self.player.height // 2)
               pyxel.camera(camera_x, camera_y)
 
               if self.state == "TITLE":
+                  self.state = "PLAY"
                   pyxel.text(camera_x + 50, camera_y + 50, "Welcome to Game", pyxel.COLOR_RED)
                   pyxel.text(camera_x + 40, camera_y + 60, "Press RETURN to Start", pyxel.COLOR_WHITE)
               elif self.state == "PLAY":
